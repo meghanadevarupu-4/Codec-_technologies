@@ -1,0 +1,44 @@
+# Simple Chatbot in Python
+
+print("🤖 ChatBot: Hello! I'm your chatbot.")
+print("Type 'bye' to end the conversation.\n")
+
+while True:
+    user = input("You: ").lower()
+
+    if user == "hello" or user == "hi":
+        print("🤖 ChatBot: Hello! How can I help you?")
+
+    elif "how are you" in user:
+        print("🤖 ChatBot: I'm doing great! Thanks for asking.")
+
+    elif "your name" in user:
+        print("🤖 ChatBot: My name is Python ChatBot.")
+
+    elif "time" in user:
+        from datetime import datetime
+        current_time = datetime.now().strftime("%I:%M %p")
+        print("🤖 ChatBot: Current time is", current_time)
+
+    elif "date" in user:
+        from datetime import datetime
+        current_date = datetime.now().strftime("%d-%m-%Y")
+        print("🤖 ChatBot: Today's date is", current_date)
+
+    elif "help" in user:
+        print("🤖 ChatBot: I can answer simple questions like:")
+        print("- Hello")
+        print("- How are you?")
+        print("- What is your name?")
+        print("- What is the time?")
+        print("- What is the date?")
+
+    elif "thanks" in user or "thank you" in user:
+        print("🤖 ChatBot: You're welcome!")
+
+    elif user == "bye":
+        print("🤖 ChatBot: Goodbye! Have a nice day.")
+        break
+
+    else:
+        print("🤖 ChatBot: Sorry, I don't understand that. Please try another question.")
